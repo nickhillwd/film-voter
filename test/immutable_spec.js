@@ -13,13 +13,11 @@ describe('immutability', () => {
       let nextState = increment(state);
 
       expect(nextState).to.equal(43);
-      console.log("nextState:\t", nextState);
       expect(state).to.equal(42);
-      console.log("state:\t\t", state);
     });
   });
 
-  describe('A List of movies in the state', () => {
+  describe('A list of movies in the state', () => {
 
     function addMovie(currentState, movie){
       return currentState.push(movie);
@@ -34,17 +32,15 @@ describe('immutability', () => {
         '28 Days Later',
         'Sunshine'
       ));
-      console.log("nextState:\t", nextState);
       expect(state).to.equal(List.of(
         'Trainspotting',
         '28 Days Later'
       ));
-      console.log("state:\t\t", state);
 
     });
   });
 
-  describe('A Tree', () => {
+  describe('A tree', () => {
     function addMovie(currentState, movie){
       // return currentState.set(
       //   'movies',
@@ -66,14 +62,12 @@ describe('immutability', () => {
           'Sunshine'
         )
       }));
-      console.log('nextState:\t', nextState);
       expect(state).to.equal(Map({
         movies: List.of(
           'Trainspotting',
           '28 Days Later'
         )
       }));
-      console.log('state:\t\t', state);
 
     });
 
